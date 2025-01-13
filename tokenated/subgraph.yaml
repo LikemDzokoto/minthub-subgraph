@@ -1,0 +1,92 @@
+specVersion: 1.0.0
+indexerHints:
+  prune: auto
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: Tokenated
+    network: base-sepolia
+    source:
+      address: "0x15f76333BD08418558A6F35c0866616616633b08"
+      abi: Tokenated
+      startBlock: 20479576
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - Approval
+        - ApprovalForAll
+        - AuctionCancelled
+        - AuctionCreated
+        - AuctionEnded
+        - BatchMetadataUpdate
+        - BidPlaced
+        - Blacklisted
+        - FeeUpdated
+        - FundsWithdrawn
+        - ListingCancelled
+        - MetadataUpdate
+        - NFTListed
+        - NFTSold
+        - Paused
+        - PriceUpdated
+        - RoleAdminChanged
+        - RoleGranted
+        - RoleRevoked
+        - RoyaltyPaid
+        - Transfer
+        - UnBlacklisted
+        - Unpaused
+      abis:
+        - name: Tokenated
+          file: ./abis/Tokenated.json
+      eventHandlers:
+        - event: Approval(indexed address,indexed address,indexed uint256)
+          handler: handleApproval
+        - event: ApprovalForAll(indexed address,indexed address,bool)
+          handler: handleApprovalForAll
+        - event: AuctionCancelled(indexed uint256,indexed address)
+          handler: handleAuctionCancelled
+        - event: AuctionCreated(indexed uint256,address,uint256,uint256)
+          handler: handleAuctionCreated
+        - event: AuctionEnded(indexed uint256,address,uint256)
+          handler: handleAuctionEnded
+        - event: BatchMetadataUpdate(uint256,uint256)
+          handler: handleBatchMetadataUpdate
+        - event: BidPlaced(indexed uint256,address,uint256)
+          handler: handleBidPlaced
+        - event: Blacklisted(indexed address)
+          handler: handleBlacklisted
+        - event: FeeUpdated(string,uint256)
+          handler: handleFeeUpdated
+        - event: FundsWithdrawn(indexed address,uint256)
+          handler: handleFundsWithdrawn
+        - event: ListingCancelled(indexed uint256,indexed address)
+          handler: handleListingCancelled
+        - event: MetadataUpdate(uint256)
+          handler: handleMetadataUpdate
+        - event: NFTListed(indexed uint256,address,uint256)
+          handler: handleNFTListed
+        - event: NFTSold(indexed uint256,address,address,uint256)
+          handler: handleNFTSold
+        - event: Paused(address)
+          handler: handlePaused
+        - event: PriceUpdated(indexed uint256,uint256)
+          handler: handlePriceUpdated
+        - event: RoleAdminChanged(indexed bytes32,indexed bytes32,indexed bytes32)
+          handler: handleRoleAdminChanged
+        - event: RoleGranted(indexed bytes32,indexed address,indexed address)
+          handler: handleRoleGranted
+        - event: RoleRevoked(indexed bytes32,indexed address,indexed address)
+          handler: handleRoleRevoked
+        - event: RoyaltyPaid(indexed uint256,address,uint256)
+          handler: handleRoyaltyPaid
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+        - event: UnBlacklisted(indexed address)
+          handler: handleUnBlacklisted
+        - event: Unpaused(address)
+          handler: handleUnpaused
+      file: ./src/tokenated.ts
