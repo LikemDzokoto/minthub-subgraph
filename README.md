@@ -28,20 +28,6 @@ To modify or extend this subgraph:
    graph deploy --studio tokenated
    ```
 
-## Cloning the Repository
-
-To clone the repository, use the following command:
-```bash
-git clone https://github.com/LikemDzokoto/minthub-subgraph
-```
-
-## Installing Packages
-
-To install the necessary packages, run:
-```bash
-yarn install
-```
-
 ## Authenticating The Graph
 
 To authenticate with The Graph, follow the instructions provided in the official documentation.
