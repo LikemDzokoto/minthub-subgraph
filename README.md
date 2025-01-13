@@ -1,8 +1,8 @@
-# Overview
+## Overview
 
 This subgraph indexes and tracks data from the Tokenated deployed on the Base Sepolia network. It provides real-time insights into the Marketplace's transactions and events.
 
-## Setup
+### Setup
 
 To modify or extend this subgraph:
 
@@ -28,24 +28,18 @@ To modify or extend this subgraph:
    graph deploy --studio tokenated
    ```
 
-## Authenticating The Graph
+### Authenticating The Graph
 
 To authenticate with The Graph, follow the instructions provided in the official documentation.
 
-## Testing the Subgraph
+### Testing the Subgraph
 
 To run tests for the subgraph, use:
 ```bash
 yarn test
 ```
 
-## Deploying the Subgraph
 
-To deploy the subgraph, use:
-```bash
-graph deploy <subgraph-name>
-```
-
-## Live Query Link
+### Live Query Link
 
 You can access the live query link here: [Live Query Link](<https://api.studio.thegraph.com/query/101141/tokenated/version/latest>)
